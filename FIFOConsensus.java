@@ -1,5 +1,3 @@
-
-import java.lang.reflect.Method;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -13,9 +11,9 @@ public class FIFOConsensus extends ConsensusProtocol {
     public FIFOConsensus(int threadCount) {
         // done
         super(threadCount);
-        if (threadCount != 2) {
-            throw new IllegalArgumentException("Invalid threadCount");
-        }
+        // if (threadCount != 2) {
+        //     throw new IllegalArgumentException("Invalid threadCount");
+        // }
         want[0] = false;
         want[1] = true;
         turn = 0;
@@ -24,9 +22,9 @@ public class FIFOConsensus extends ConsensusProtocol {
     @Override
     public int decide(int threadId, int value) {
         // done
-        if (threadId < 0 || threadId > 1) {
-            throw new IllegalArgumentException("ThreadId must be 1 or 0");
-        }
+        // if (threadId < 0 || threadId > 1) {
+        //     throw new IllegalArgumentException("ThreadId must be 1 or 0");
+        // }
         propose(threadId, value);
 
         lock(threadId);
